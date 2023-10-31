@@ -70,33 +70,32 @@ class _designState extends State<design> {
          ),
     );
   }
-  Widget buildItem (UserModel user, int index) => GestureDetector(
-       onTap: ()
-       {
-         Navigator.push(context, MaterialPageRoute(builder: (context)=>screns[index]));
-       },
-       child: Padding(
-         padding: const EdgeInsets.all(8.0),
-         child: Container(
-          width: double.infinity,
-          child: Row
-            (
-            children: [
-              const CircleAvatar(
-                backgroundColor: Colors.black,
-                radius: 25.0,
-              ),
-              const SizedBox(width: 15.0,),
-              Text(
-                "${user.name}",
-                style: const TextStyle(
-                  fontSize: 20.0,
-                ),
-              ),
-            ],
-          ),
-    ),
+  Widget buildItem (UserModel user, int index) => InkWell(
+    onTap: ()
+    {
+      Navigator.push(context, MaterialPageRoute(builder: (context)=>screns[index]));
+    },
+    child: Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+       width: double.infinity,
+       child: Row
+         (
+         children: [
+           const CircleAvatar(
+             backgroundColor: Colors.black,
+             radius: 25.0,
+           ),
+           const SizedBox(width: 15.0,),
+           Text(
+             "${user.name}",
+             style: const TextStyle(
+               fontSize: 20.0,
+             ),
+           ),
+         ],
        ),
-
+      ),
+    ),
   ) ;
 }
